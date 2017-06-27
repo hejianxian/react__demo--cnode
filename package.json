@@ -4,15 +4,18 @@
   "private": true,
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "^3.0.0-beta.7"
   },
   "devDependencies": {
+    "flow-bin": "^0.48.0",
     "react-scripts": "1.0.7"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flow": "flow"
   }
 }
