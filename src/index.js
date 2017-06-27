@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader'
+import { AppContainer } from 'react-hot-loader';
 
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 ReactDOM.render(
-    <AppContainer>
-        <App/>
-    </AppContainer>,
-    document.getElementById('root')
+  <AppContainer>
+    <App/>
+  </AppContainer>,
+  document.getElementById('root')
 );
 registerServiceWorker();
 
