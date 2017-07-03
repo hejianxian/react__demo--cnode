@@ -1,20 +1,21 @@
 import React from 'react';
 
-import { A, NavItem} from './A';
+import { A } from './A';
 import Img from './Img';
 import Nav from './Nav';
 import Wraper from './Wraper';
 import Container from './Container';
+import HeaderLink from './HeaderLink';
 
 import Logo from './logo.svg';
 import NavTypes from './nav-types.json';
 
 class Header extends React.Component {
   render() {
-    let navItems = (<div></div>);
-    navItems = NavTypes.menus.map((item, index) => (
-      <NavItem key={item.type}>{item.title}</NavItem>
-    ));
+    let menus = (<div></div>);
+    menus = NavTypes.menus.map(item => (
+      <HeaderLink key={item.type} to={item.type}>{item.title}</HeaderLink>
+    ))
 
     return(
       <div>
@@ -24,7 +25,7 @@ class Header extends React.Component {
               <Img src={Logo} alt="CNode"></Img>
             </A>
             <Nav>
-              {navItems}
+              {menus}
             </Nav>
           </Container>
         </Wraper>

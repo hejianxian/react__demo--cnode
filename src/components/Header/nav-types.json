@@ -1,18 +1,18 @@
 {
   "menus": [{
-    "type": "all",
+    "type": "/all",
     "title": "全部"
   },{
-    "type": "good",
+    "type": "/good",
     "title": "精华"
   },{
-    "type": "share",
+    "type": "/share",
     "title": "分享"
   },{
-    "type": "ask",
+    "type": "/ask",
     "title": "问答"
   },{
-    "type": "jod",
+    "type": "/jod",
     "title": "招聘"
   }]
 }
