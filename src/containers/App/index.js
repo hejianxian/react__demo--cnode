@@ -8,7 +8,8 @@ import './App.css';
 
 import ListWraper from './ListWraper';
 import Header from '../../components/Header';
-import Navigator from '../../components/Navigator';
+
+import HomePage from '../HomePage';
 
 class App extends Component {
   render() {
@@ -17,9 +18,8 @@ class App extends Component {
         <Router>
           <div>
             <Header></Header>
-            <Navigator></Navigator>
             <ListWraper>
-              <Route exact path="/all" component={()=>(<div><h2>All</h2></div>)}></Route>
+              <Route exact path="/all" component={HomePage}></Route>
               <Route path="/good" component={()=>(<div><h2>Good</h2></div>)}></Route>
               <Route path="/share" component={()=>(<div><h2>Share</h2></div>)}></Route>
               <Route path="/ask" component={()=>(<div><h2>Ask</h2></div>)}></Route>

@@ -7,8 +7,8 @@ const Wraper = styled.div`
   background: #fff;
   text-align: center;
   box-shadow: 0 1px 2px rgba(0,0,0,.1);
-  position: relative;
-  top: 0;
+  position: fixed;
+  top: 50px;
   left: 0;
   z-index: 999;
 `;
