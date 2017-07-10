@@ -16,6 +16,7 @@ class HomePage extends React.Component {
 
   static propTypes = {
     topics: PropTypes.array.isRequired,
+    fetching: PropTypes.bool.isRequired,
     dispatch: PropTypes.func.isRequired,
     tag: PropTypes.string.isRequired
   }
@@ -27,12 +28,15 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const { topics } = this.props;
+    const { topics, fetching } = this.props;
+    const isEmpty = topics.length === 0;
 
     return (
       <div className="list">
         <Navigator></Navigator>
         <div className="list__container">
+          { fetching && <p className="warning">Loading...</p> }
+          { (isEmpty && !fetching) && <p className="warning">没有任何内容...</p>}
           <List topics={topics}></List>
         </div>
       </div>
@@ -42,11 +46,13 @@ class HomePage extends React.Component {
 
 const mapStateToProps = (state) => {
   const { getTopicsByTag, listTag } = state;
-  const { topics } = getTopicsByTag[listTag.tag] || {
-    topics: []
+  const { topics, fetching } = getTopicsByTag[listTag.tag] || {
+    topics: [],
+    fetching: true
   };
   return {
-    topics: topics
+    topics,
+    fetching
   }
 }
 
