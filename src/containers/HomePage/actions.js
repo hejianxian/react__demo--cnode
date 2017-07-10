@@ -1,3 +1,4 @@
+import fetch from '../../utils/fetch';
 import {
   BEFORE_FETCH,
   FETCH_SUCCESS,
@@ -30,8 +31,7 @@ export const invalidateTopics = (tag) => {
 export const getTopicsByType = tag => dispatch => {
   dispatch(beforeFetch(tag));
   return fetch('https://cnodejs.org/api/v1/topics')
-    .then(response => response.json())
-    .then(json => dispatch(receiveFetch(tag, json.data)))
+    .then(res => dispatch(receiveFetch(tag, res.data)))
 }
 
 const shouldFetchPosts = (state, tag) => {

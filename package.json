@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -38,6 +39,8 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.28.0",
     "jest": "20.0.3",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.0.0",
     "postcss-loader": "2.0.5",
@@ -96,6 +99,9 @@
     ]
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "globals": {
+      "_": true
+    }
   }
 }

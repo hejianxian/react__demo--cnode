@@ -5,6 +5,8 @@ import PropTypes from 'prop-types'
 import Navigator from '../../components/Navigator';
 import List from './List';
 
+import './index.less';
+
 import {
   fetchPostsIfNeeded
 } from './actions';
@@ -25,9 +27,11 @@ class HomePage extends React.Component {
     const { topics } = this.props;
 
     return (
-      <div className="list all-list">
+      <div className="list">
         <Navigator></Navigator>
-        <List topics={topics}></List>
+        <div className="list__container">
+          <List topics={topics}></List>
+        </div>
       </div>
     )
   }

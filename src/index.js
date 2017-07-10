@@ -1,4 +1,7 @@
-import 'whatwg-fetch'
+import 'whatwg-fetch';
+import 'lodash';
+
+import './index.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -11,7 +14,6 @@ import { createLogger } from 'redux-logger';
 import rootReducer from './reducers';
 
 import App from './containers/App';
-import './index.css';
 
 const middlewares = [ thunkMiddleware ];
 if (process.env.NODE_ENV !== 'production') {

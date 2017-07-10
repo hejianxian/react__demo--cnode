@@ -1,10 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import Item from './Item';
 
 const List = ({topics}) => (
     <ul>
       {topics.map((topic, i) => (
-        <li key={i}>{topic.title}</li>
+        <Item key={i} {...topic}></Item>
       ))}
     </ul>
 )
