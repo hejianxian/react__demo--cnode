@@ -9,8 +9,7 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 
-export const GET_TOPICS = 'react__demo--cnode/Home/GET_TOPICS';
-
+export const LIST_TAG = 'react__demo--cnode/Home/LIST_TAG';
 export const BEFORE_FETCH = 'react__demo--cnode/Home/BEFORE_FETCH';
 export const FETCH_SUCCESS = 'react__demo--cnode/Home/FETCH_SUCCESS';
 export const INVALIDATE_TOPICS = 'react__demo--cnode/Home/INVALIDATE_TOPICS';

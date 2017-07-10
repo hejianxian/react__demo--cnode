@@ -9,7 +9,8 @@ import './App.css';
 import ListWraper from './ListWraper';
 import Header from '../../components/Header';
 
-import HomePage from '../HomePage';
+import ListPage from '../ListPage';
+import HocCreateList from '../ListPage/HocCreateList';
 
 class App extends Component {
   render() {
@@ -19,11 +20,11 @@ class App extends Component {
           <div>
             <Header></Header>
             <ListWraper>
-              <Route exact path="/all" component={HomePage}></Route>
-              <Route path="/good" component={()=>(<div><h2>Good</h2></div>)}></Route>
-              <Route path="/share" component={()=>(<div><h2>Share</h2></div>)}></Route>
-              <Route path="/ask" component={()=>(<div><h2>Ask</h2></div>)}></Route>
-              <Route path="/jod" component={()=>(<div><h2>Jod</h2></div>)}></Route>
+              <Route exact path="/all" component={HocCreateList(ListPage, 'all')}></Route>
+              <Route path="/good" component={HocCreateList(ListPage, 'good')}></Route>
+              <Route path="/share" component={HocCreateList(ListPage, 'share')}></Route>
+              <Route path="/ask" component={HocCreateList(ListPage, 'ask')}></Route>
+              <Route path="/jod" component={HocCreateList(ListPage, 'jod')}></Route>
             </ListWraper>
           </div>
         </Router>

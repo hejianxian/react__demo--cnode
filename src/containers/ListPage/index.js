@@ -8,6 +8,7 @@ import List from './List';
 import './index.less';
 
 import {
+  saveListTag,
   fetchPostsIfNeeded
 } from './actions';
 
@@ -15,12 +16,14 @@ class HomePage extends React.Component {
 
   static propTypes = {
     topics: PropTypes.array.isRequired,
-    dispatch: PropTypes.func.isRequired
+    dispatch: PropTypes.func.isRequired,
+    tag: PropTypes.string.isRequired
   }
 
   componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(fetchPostsIfNeeded('all'));
+    const { dispatch, tag } = this.props;
+    dispatch(saveListTag(tag));
+    dispatch(fetchPostsIfNeeded(tag));
   }
 
   render() {
@@ -38,8 +41,8 @@ class HomePage extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  const { getTopicsByTag } = state;
-  const { topics } = getTopicsByTag['all'] || {
+  const { getTopicsByTag, listTag } = state;
+  const { topics } = getTopicsByTag[listTag.tag] || {
     topics: []
   };
   return {

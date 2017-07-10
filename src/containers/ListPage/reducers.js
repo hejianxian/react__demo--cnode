@@ -1,4 +1,5 @@
 import {
+  LIST_TAG,
   BEFORE_FETCH,
   FETCH_SUCCESS,
   INVALIDATE_TOPICS
@@ -42,6 +43,18 @@ export const getTopicsByTag = (state = {}, action) => {
       return {
         ...state,
         [action.tag]: getTopics(state[action.tag], action)
+      }
+    default:
+      return state;
+  }
+}
+
+export const listTag = (state = { tag: 'all' }, action) => {
+  switch(action.type) {
+    case LIST_TAG:
+      return {
+        ...state,
+        tag: action.tag
       }
     default:
       return state;

@@ -1,9 +1,18 @@
 import fetch from '../../utils/fetch';
 import {
+  LIST_TAG,
   BEFORE_FETCH,
   FETCH_SUCCESS,
   INVALIDATE_TOPICS
 } from './constants';
+
+
+export const saveListTag = (tag) => {
+  return {
+    type: LIST_TAG,
+    tag
+  }
+}
 
 export const beforeFetch = (tag) => {
   return {
@@ -30,7 +39,7 @@ export const invalidateTopics = (tag) => {
 
 export const getTopicsByType = tag => dispatch => {
   dispatch(beforeFetch(tag));
-  return fetch('https://cnodejs.org/api/v1/topics')
+  return fetch(`https://cnodejs.org/api/v1/topics?tab=${tag}`)
     .then(res => dispatch(receiveFetch(tag, res.data)))
 }
 

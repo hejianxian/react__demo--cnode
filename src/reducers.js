@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
-import { getTopicsByTag } from './containers/HomePage/reducers';
+import { getTopicsByTag, listTag } from './containers/ListPage/reducers';
 
 const rootReducers = combineReducers({
-  getTopicsByTag
+  getTopicsByTag,
+  listTag
 });
 
 export default rootReducers;
